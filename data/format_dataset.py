@@ -75,7 +75,7 @@ header.append("truth_t_3")
 header = ",".join(header)
 
 
-to_america = open("to_america.csv","w+")
+to_america = open("verify_to_america.csv","w+")
 
 to_america.write(header)
 to_america.write("\n")
@@ -87,7 +87,7 @@ american_values = to_american_dataset.values
 
     
 
-to_india = open("to_india.csv","w+")
+to_india = open("verify_to_india.csv","w+")
 
 to_india.write(header)
 to_india.write("\n")
@@ -176,3 +176,41 @@ for i in output_a:
     to_america.write("\n")
 to_india.close()
 to_america.close()
+
+
+annotate = open("dataset_annotate.csv","w+")
+
+header = [ "comment_"+str((i+1)) for i in range(n)]
+header.append("comment_t_1")
+header.append("truth_t_1")
+header.append("comment_t_2")
+header.append("truth_t_2")
+header.append("comment_t_3")
+header.append("truth_t_3")
+header = ",".join(header)
+annotate.write(header)
+annotate.write("\n")
+
+output_annotate = []
+for row in american_:
+    row_annotate =[]
+    for i in range(0,len(row)-13,3):
+        
+        row_annotate.append(row[i])
+     
+       
+    for i in range(len(row)-12,len(row),4):
+       
+        row_annotate.append(row[i])
+
+        row_annotate.append(row[i+3])
+    output_annotate.append(row_annotate)
+  
+
+output_annotate = [",".join(i) for i in output_annotate]
+for i in output_annotate:
+    annotate.write(i)
+    annotate.write("\n")
+    
+annotate.close()
+        
