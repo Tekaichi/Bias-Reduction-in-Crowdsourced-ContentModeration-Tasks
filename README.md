@@ -36,4 +36,4 @@ In Mtruk, create a new project. MTurk will allow you to edit the project. Do so,
 In Sandbox, create the task using the same process as described above. The only difference is that when Previewing the task, you will be able to see the Worker view. 
 
 ### Dataset
-In the folder data, we have available three datasets to be used in the experimental setup. dataset-annotate.csv, which is meant for the Annotate-Justify task. verify-to-america.csv which is meant to the Verify-Task to be deployed in USA. verify-to-india.csv which is meant to the Verify-Justify to be deployed in India. Both the verify datasets, are simulations of a biased first step.
+In the folder data, we have available three datasets to be used in the experimental setup. dataset-annotate.csv, which is meant for the Annotate-Justify task. verify-to-america.csv which is meant to the Verify-Task to be deployed in USA. verify-to-india.csv which is meant to the Verify-Justify to be deployed in India. Both the verify datasets are simulations of a biased first step.
