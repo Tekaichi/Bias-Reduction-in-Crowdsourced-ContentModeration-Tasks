@@ -321,7 +321,7 @@ By clicking <b>“Next”</b> below you are indicating that you are at least 18 
   </div>
 
   <div id='block-12' style='padding: 10px;'>
-    <input type="radio" name="option_1" value="Inappropriate">The comment is <b>Inappropriate</b></input>
+    <input type="radio" name="option_1" value="Inappropriate" id="option-12">The comment is <b>Inappropriate</b></input>
    
     <span id='result-12'></span>
   </div>
@@ -989,14 +989,19 @@ By clicking <b>“Next”</b> below you are indicating that you are at least 18 
 		if(selected != ""){
 			value = selected.value;
 			checked = checked + 1;
+			selected_id = selected.id;
 			
-		
+			selected_id = selected_id[selected_id.length-1];
+			result = document.getElementById("result-"+id.toString()+selected_id)
 			if(truth == value)
 			{
 				selected.parentElement.style.border = "1px solid green";
+				result.innerHTML="<b style='padding:10px'>(Correct)</b>"
+
 			}else
 			{
-			    selected.parentElement.style.border = "1px solid red";
+			    selected.parentElement.style.border = "1px solid red";	
+				result.innerHTML="<b style='padding:10px'>(Incorrect)</b>"
 
 
 			}
