@@ -228,7 +228,7 @@
 
 	</style>
 
-	<crowd-form  answer-format="flatten-objects">
+	<crowd-form  answer-format="flatten-objects" id="form">
 
 
 
@@ -321,12 +321,12 @@
 
 		<div id='block-11' style='padding: 10px;'>
 			
-		<input type="radio" name="option_1" value=${label_t_1} required id="option-11">I agree, the comment is <b>${label_t_1}</b></input>
+		<label><input type="radio" name="option_1" value=${label_t_1} required id="option-11">I agree, the comment is <b>${label_t_1}</b></label>
 		<span id='result-11'></span>
 	  </div>
 
 	  <div id='block-12' style='padding: 10px;'>
-		<input type="radio" name="option_1" value=${label_not_t_1} id="option-12">I disagree, the comment is <b>${label_not_t_1}</b></input>
+		<label><input type="radio" name="option_1" value=${label_not_t_1} id="option-12">I disagree, the comment is <b>${label_not_t_1}</b></label>
 	   
 		<span id='result-12'></span>
 	  </div>
@@ -352,13 +352,13 @@
 		</div>
 
 	 <div id='block-21' style='padding: 10px;'>
-		<input type="radio" name="option_2" value=${label_t_2} required id='option-21'> I agree, the comment is ${label_t_2}  </input>
+		<label><input type="radio" name="option_2" value=${label_t_2} required id='option-21'> I agree, the comment is ${label_t_2}  </label>
 		<span id='result-21'></span>
 	  </div>
 
 	  <div id='block-22' style='padding: 10px;'>
-		<input type="radio" name="option_2" value=${label_not_t_2} id='option-22'> I disagree, the comment is ${label_not_t_2}      
-		</input>
+		<label><input type="radio" name="option_2" value=${label_not_t_2} id='option-22'> I disagree, the comment is ${label_not_t_2}      
+		</label>
 		<span id='result-22'></span>
 	  </div>
 	  
@@ -384,13 +384,13 @@
 		</div>
 
 	 <div id='block-31' style='padding: 10px;'>
-		<input type="radio" name="option_3" value=${label_t_3} required id='option-31'> I agree, the comment is ${label_t_3}  </input>
+		<label><input type="radio" name="option_3" value=${label_t_3} required id='option-31'> I agree, the comment is ${label_t_3}  </label>
 		<span id='result-31'></span>
 	  </div>
 
 	  <div id='block-32' style='padding: 10px;'>
-		<input type="radio" name="option_3" value=${label_not_t_3} id='option-32'> I disagree, the comment is ${label_not_t_3}      
-		</input>
+		<label><input type="radio" name="option_3" value=${label_not_t_3} id='option-32'> I disagree, the comment is ${label_not_t_3}      
+		</label>
 		<span id='result-32'></span>
 	  </div>
 	   <button class="site" type='button' value=${truth_t_3} onclick='displayAnswer(this.value,3)' style='width: 100px; height: 40px; border-radius: 3px; background-color: #FFFFFF; font-weight: 500;'>Check Answer</button>
@@ -424,8 +424,8 @@
 
 		<h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
 
-		<input type="radio" name="label_1" value=${label_1} required>I agree, the comment is <b>${label_1}</b></input>
-				<input type="radio" name="label_1" value=${label_not_1}>Disagree, the comment is <b>${label_not_1}</b></input>
+		<label><input type="radio" name="label_1" value=${label_1} required>I agree, the comment is <b>${label_1}</b></label>
+				<label><input type="radio" name="label_1" value=${label_not_1}>Disagree, the comment is <b>${label_not_1}</b></label>
 
 		<h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
 		
@@ -537,8 +537,8 @@
 			  
 		<h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
 
-		<input type="radio" name="label_2" value=${label_2} required>I agree, the comment is <b>${label_2}</b></input>
-				<input type="radio" name="label_2" value=${label_not_2}>Disagree, the comment is <b>${label_not_2}</b></input>
+		<label><input type="radio" name="label_2" value=${label_2} required>I agree, the comment is <b>${label_2}</b></label>
+				<label><input type="radio" name="label_2" value=${label_not_2}>Disagree, the comment is <b>${label_not_2}</b></label>
 
 		<h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
 		
@@ -648,8 +648,8 @@
 			  
 		<h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
 
-		<input type="radio" name="label_3" value=${label_3} required>I agree, the comment is <b>${label_3}</b></input>
-				<input type="radio" name="label_3" value=${label_not_3}>Disagree, the comment is <b>${label_not_3}</b></input>
+		<label><input type="radio" name="label_3" value=${label_3} required>I agree, the comment is <b>${label_3}</b></label>
+				<label><input type="radio" name="label_3" value=${label_not_3}>Disagree, the comment is <b>${label_not_3}</b></label>
 
 		<h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
 		
@@ -864,8 +864,8 @@
 			  
 		<h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
 
-		<input type="radio" name="label_5" value=${label_5} required>I agree, the comment is <b>${label_5}</b></input>
-				<input type="radio" name="label_5" value=${label_not_5}>Disagree, the comment is <b>${label_not_5}</b></input>
+		<label><input type="radio" name="label_5" value=${label_5} required>I agree, the comment is <b>${label_5}</b></label>
+				<label><input type="radio" name="label_5" value=${label_not_5}>Disagree, the comment is <b>${label_not_5}</b></label>
 
 		<h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
 		
@@ -953,7 +953,9 @@
 		<div  style="display: flex;">
 		 <button style="display:none" class="back" id="prev" onclick="previous()" type="button">Previous</button>
 		<button class="button" id="nex" onclick="next()" type="button" >Next</button>
-		<button class="button" id="submit" type="submit" style="display:none">Submit</button>
+		<button class="button" id="submit" type="button" onclick="submitForm()" style="display:none">Submit</button>
+		<button style="display:none !important;"></button>
+
 		</div>
 		</crowd-form>
 
@@ -966,6 +968,10 @@
 			if(i == 5){
 				
 				return;
+			}
+			if(i == 0 && (new Set(checked)).size < 3){
+			alert("You havent finished training!")
+			return;
 			}
 			show(i);
 			console.log(i);
@@ -1001,10 +1007,12 @@
 		  }
 		}
 
-		checked = 0
+		checked = []
 		selected =""
+		
+		
+		
 		function displayAnswer(truth,id){
-			console.log(truth,id);
 			selection = document.getElementsByName("option_"+id.toString())
 		
 			for(x = 0; x < 2; x++){
@@ -1012,10 +1020,14 @@
 				selected = selection[x]
 				
 			}
+			if(!selected){
+			alert("You havent selected an answer!")
+			return;
+			}
 			}
 			if(selected != ""){
 				value = selected.value;
-				checked = checked + 1;
+				checked.push(id)
 				selected_id = selected.id;
 				
 				selected_id = selected_id[selected_id.length-1];
@@ -1035,5 +1047,32 @@
 			}
 		}
 
+		
+		
+		function submitForm(){
+		
+		var form = document.getElementById('form');//retrieve the form as a DOM element
 
+		var input = document.createElement('input');//prepare a new input DOM element
+		input.setAttribute('name', "TimeElapsed");//set the param name
+		input.setAttribute('value', timeElapsed(startTime));//set the value
+		input.setAttribute('type', "hidden")//set the type, like "hidden" or other
+
+		form.appendChild(input);//append the input to the form
+        var submitFormFunction = Object.getPrototypeOf(form).submit;
+        submitFormFunction.call(form);
+		
+		}
+		startTime = new Date()
+		function timeElapsed(startTime) {
+		  endTime = new Date();
+		  var timeDiff = endTime - startTime; //in ms
+		  // strip the ms
+		  timeDiff /= 1000;
+
+		  // get seconds 
+		  var seconds = Math.round(timeDiff);
+		  return seconds;
+		}
+		answers =[] //Annotation + 3 justifications minimum (?)
 	</script>
