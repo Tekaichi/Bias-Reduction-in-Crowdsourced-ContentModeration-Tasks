@@ -1,0 +1,1078 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+
+<style>
+
+h2 {text-align: left;}
+h3 {text-align: left;}
+p {text-align: center;}
+div {text-align: left;}
+
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #FFFFFF;
+    border: solid 2px #187dbc;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #187dbc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #187dbc;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.boxed {
+    border: 1px ;
+    position: relative;
+}
+ 
+.radio-toolbar {
+    margin: 20px;
+}
+
+.radio-toolbar input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid  #ddd;
+    border-radius: 2px;
+}
+
+.radio-toolbar label:hover {
+    background-color:#15cbac ;
+    border-color: #0e8671 ;
+    border-radius: 4px;
+}
+
+.radio-toolbar input[type="radio"]:focus + label {
+    border: 2px #0e8671;
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color: #13b99d;
+    border-color: #0e8671 ;
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container_1 {
+  padding: 2px 16px;
+  background-color: #FFFFFF;
+}
+
+.question{
+    font-weight: 600;
+}
+.answers {
+    margin-bottom: 20px;
+}
+
+
+button {
+  width: 130px;
+  height: 40px;
+  background: linear-gradient(to bottom, #4eb5e5 0%,#389ed5 100%); /* W3C */
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  border-bottom: 4px solid #2b8bc6;
+  color: #fbfbfb;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+  font-size: 15px;
+  text-align: left;
+  text-indent: 5px;
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.2);
+  cursor: pointer;
+
+/* Just for presentation */  
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+button:active {
+  box-shadow: 0px 2px 0px 0px rgba(0,0,0,.2);
+  top: 1px;
+}
+
+button:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  border-top: 20px solid #187dbc;
+  border-bottom: 20px solid #187dbc;
+  border-left: 16px solid transparent;
+  border-right: 20px solid #187dbc;
+  position: absolute;
+  opacity: 0.6; 
+  right: 0;
+  top: 0;
+  border-radius: 0 5px 5px 0;  
+}
+
+/* Button pointing left */
+
+button.back {
+  text-align: right;
+  padding-right: 12px;
+  box-sizing: border-box;
+}
+button.back:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  border-top: 20px solid #187dbc;
+  border-bottom: 20px solid #187dbc;
+  border-right: 16px solid transparent;
+  border-left: 20px solid #187dbc;
+  position: absolute;
+  opacity: 0.6; 
+  left: 0;
+  top: 0;
+  border-radius: 5px 0 0 5px;    
+}
+
+/* Single buttons */
+
+button.site {
+  width: 40px;
+  text-align: center;
+  text-indent: 0;
+}
+button.site:after{
+  display: none;
+
+
+
+}
+
+</style>
+
+<crowd-form  answer-format="flatten-objects" id="form">
+
+
+
+    <short-instructions>Based on the <strong>content moderation guidelines</strong>, please annotate the comment with the appropriate labels. The content moderation guidelines can be found in <strong> full instructions </strong></short-instructions>
+        
+    <full-instructions header="Content guidelines and detailed instructions" style="text-color:#0e8671" >        
+        <p>In this job, you will be presented with social media comments. Please, for each comment, provide a <b>label</b> and provide a justification for your judgment.</p>
+<p>The comments can be labeled as <b>appropriate</b> or <b>inappropriate</b>:</p>
+<ul>
+    <li><b>Appropriate</b> means that the comment should be allowed in social media platforms such as facebook and twitter.</li>
+    <li><b>Inappropriate</b> means that the comment should <b>not</b> be allowed be on a social media platform, where it can be seen by everyone.</li>
+</ul>
+
+<h3>Steps</h3>
+<ul>
+    <li> 1) First, read the comment.</li>
+	<li> 2) Then, label the comment </li>
+    <li> 3) Finally, provide a justification for your answer. </li>
+</ul>
+    </full-instructions>
+
+<div id ="-1">
+<h2>Consent Form</h2>
+
+You are being invited to participate in a research study in the content moderation research field. 
+<br>
+<b>Why are we doing this research study?</b>
+<br>
+ This study is being done by students from Delft University of Technology and its purpose is to understand how content moderation tasks in social media platforms can become more accurate, improving the internet and especially social media websites and benefiting everyone who uses them. 
+<br>
+<b> Who can participate in this research study? </b>
+<br>
+ This study targets people of all gender and ages residing in the United States of America. 
+<br>
+<b> What will I be asked to do and how much time will it take? </b>
+<br>
+ If you agree to take part in this study, you will be asked to moderate 5 short social media comments. Specifically, you’ll be ask to label each comment, stating whether it is appropriate or not, determining its correctness and provide justifications for your judgement. The estimate time of completion of this task is 5 minutes 
+<br>
+<b> What are my risks of being in this research study? </b>
+<br>
+ We believe there are minimal risks associated with this study, however some of the comments might show sensitive and inappropriate language, possibly featuring hate speech, racism, obscenity, etc. 
+<br>
+<b> How will my personal information be protected? </b>
+<br>
+ To the best of our ability your answers in this study will remain confidential. 
+<br>
+<b> Will I be given any money or other compensation for being in this research study? </b>
+<br>
+ Monetary compensation will be fully provided within ____ weeks of the completion of this task. Early termination will invalidate monetary compensation.
+<br>
+ As researchers we are not qualified to provide counseling services and we will not be following up with you after this study. If you feel upset after completing the study, or find that some questions or aspects of the study triggered distress, talking with a qualified clinician may help. 
+<br>
+<b> What happens if I say yes, but I change my mind later? </b>
+<br>
+ You do not have to be in this study if you do not want to. If you agree to be in the study, but later change your mind, you may drop out at any time. 
+<br>
+ If you have questions about this project or if you have a research-related problem, you may contact the students ____ 
+
+<br>
+By clicking <b>"Next"</b> below you are indicating that you are at least 18 years old, have read this consent form and agree to participate in this research study.
+<br>
+</p> Please print a copy of this page for your records. <p>
+
+</div>
+
+
+<div id="0" style="display:none">
+    <h1><strong>Annotate the comment: Training Program</strong></h1>
+
+    <h2> Read the content guidelines. Indicate whether you agree/disagree with the label assigned to the comment. </h2>
+    <h3>You can check your answer by clicking on the "Check Answer" button. </h3>
+
+<div class="card">
+        <classification-target>
+            <div class="container_1">
+                <div>
+                    <h3>Text</h3>
+    	      	    <p>${comment_t_1}</p>
+    	        </div>
+    	    <hr/>
+    	    </div>
+    	 </classification-target>
+    </div>
+      
+
+    <div id='block-11' style='padding: 10px;'>
+        
+    <label><input type="radio" name="option_1" value="Appropriate" required id="option-11">The comment is <b>Appropriate</b></label>
+    <span id='result-11'></span>
+  </div>
+
+  <div id='block-12' style='padding: 10px;'>
+    <label><input type="radio" name="option_1" value="Inappropriate" id="option-12">The comment is <b>Inappropriate</b></label>
+   
+    <span id='result-12'></span>
+  </div>
+
+   <button class="site" type='button' value=${truth_t_1} onclick='displayAnswer(this.value,1)' style='width: 100px; height: 40px; border-radius: 3px; background-color: #FFFFFF; font-weight: 500;'>Check Answer</button>
+<a id='showanswer_1'></a>
+
+
+<div class="card">
+        <classification-target>
+            <div class="container_1">
+                <div>
+                    <h3>Text</h3>
+    	      	    <p>${comment_t_2}</p>
+    	        </div>
+    	    <hr/>
+    	    </div>
+    	 </classification-target>
+    </div>
+
+ <div id='block-21' style='padding: 10px;'>
+    <label><input type="radio" name="option_2" value="Appropriate" required id='option-21'> The comment is <b>Appropriate</b>  </label>
+    <span id='result-21'></span>
+  </div>
+
+  <div id='block-22' style='padding: 10px;'>
+    <label><input type="radio" name="option_2" value="Inappropriate" id='option-22'> The comment is <b>Inappropriate</b>      
+    </label>
+    <span id='result-22'></span>
+  </div>
+  
+   <button class="site" type='button' value=${truth_t_2} onclick='displayAnswer(this.value,2)' style='width: 100px; height: 40px; border-radius: 3px; background-color: #FFFFFF; font-weight: 500;'>Check Answer</button>
+
+<a id='showanswer_2'></a>
+
+
+<div class="card">
+        <classification-target>
+            <div class="container_1">
+                <div>
+                    <h3>Text</h3>
+    	      	    <p>${comment_t_3}</p>
+    	        </div>
+    	    <hr/>
+               
+    	    </div>
+    	 </classification-target>
+    </div>
+
+ <div id='block-31' style='padding: 10px;'>
+    <label><input type="radio" name="option_3" value="Appropriate" required id='option-31'> The comment is <b>Appropriate</b>  </label>
+    <span id='result-31'></span>
+  </div>
+
+  <div id='block-32' style='padding: 10px;'>
+    <label><input type="radio" name="option_3" value="Inappropriate" id='option-32'> The comment is <b>Inappropriate</b>   
+    </label>
+    <span id='result-32'></span>
+  </div>
+   <button class="site" type='button' value=${truth_t_3} onclick='displayAnswer(this.value,3)' style='width: 100px; height: 40px; border-radius: 3px; background-color: #FFFFFF; font-weight: 500;'>Check Answer</button>
+<a id='showanswer_3'></a>
+      
+</div>
+
+
+
+
+
+
+<div id="1" style="display:none">
+ <h1><strong>Label the comment</strong></h1>
+
+    <h2> Read the content guidelines. Indicate the appropriate label for the comment </h2>
+    <div class="card">
+        <classification-target>
+            <div class="container_1">
+                <div>
+                    <h3>Text</h3>
+    	      	    <p>${comment_1}</p>
+    	        </div>
+    	    <hr/>
+              
+    	    </div>
+    	 </classification-target>
+    </div>
+
+    <h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
+
+    <label><input type="radio" name="label_1" value="Appropriate"required>The comment is <b>Appropriate</b></label>
+            <label><input type="radio" name="label_1" value="Inappropriate">The comment is <b>Inappropriate</b></label>
+
+    <h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
+    
+    <div class="card">
+        <div class="container_1">
+            <h3>Offense</h3>
+            <label class="container">Offensive (targeting an indiviual)
+                <input type="checkbox" name="off_checkbox_1_1">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Offensive (targeting a group or groups)
+                <input type="checkbox" name="off_checkbox_2_1" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Offensive (targeting others)
+                <input type="checkbox" name="off_checkbox_3_1">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Non-offensive
+                <input type="checkbox" name="off_checkbox_4_1">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="container_1">
+            <h3>Aggression</h3>
+            <label class="container">Overtly aggressive
+              <input type="checkbox" name="agg_checkbox_1_1" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Covertly aggressive
+              <input type="checkbox" name="agg_checkbox_2_1" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Non-aggressive
+              <input type="checkbox" name="agg_checkbox_3_1">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="container_1">
+            <h3>Toxicity of content</h3>
+            <label class="container">Toxic
+                <input type="checkbox" name="toxic_checkbox_1_1" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Severe toxic
+              <input type="checkbox" name="toxic_checkbox_2_1" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Obscene
+              <input type="checkbox" name="toxic_checkbox_3_1">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Threat
+              <input type="checkbox" name="toxic_checkbox_4_1">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Insult
+              <input type="checkbox" name="toxic_checkbox_5_1">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Identity hate
+              <input type="checkbox" name="toxic_checkbox_6_1">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Harmless
+              <input type="checkbox" name="toxic_checkbox_7_1">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+    
+        <div>
+        <h2>Are there any additional comments regarding the comment? Please describe them below. </h2>
+        <crowd-text-area name="essay-1" rows="1"  style="background-color: #FFFFFF"></crowd-text-area>
+    </div>
+    
+    </div>
+
+<div id="2" style="display:none">
+ <h1><strong>Label the comment</strong></h1>
+
+    <h2> Read the content guidelines. Indicate the appropriate label for the comment </h2>
+    <div class="card">
+        <classification-target>
+            <div class="container_1">
+                <div>
+                    <h3>Text</h3>
+    	      	    <p>${comment_2}</p>
+    	        </div>
+    	    <hr/>
+              
+    	    </div>
+    	 </classification-target>
+    </div>
+
+    <h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
+
+    <label><input type="radio" name="label_2" value="Appropriate"required>The comment is <b>Appropriate</b></label>
+            <label><input type="radio" name="label_2" value="Inappropriate">The comment is <b>Inappropriate</b></label>
+
+    <h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
+    
+    <div class="card">
+        <div class="container_1">
+            <h3>Offense</h3>
+            <label class="container">Offensive (targeting an indiviual)
+                <input type="checkbox" name="off_checkbox_1_2">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Offensive (targeting a group or groups)
+                <input type="checkbox" name="off_checkbox_2_2" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Offensive (targeting others)
+                <input type="checkbox" name="off_checkbox_3_2">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Non-offensive
+                <input type="checkbox" name="off_checkbox_4_2">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="container_1">
+            <h3>Aggression</h3>
+            <label class="container">Overtly aggressive
+              <input type="checkbox" name="agg_checkbox_1_2" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Covertly aggressive
+              <input type="checkbox" name="agg_checkbox_2_2" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Non-aggressive
+              <input type="checkbox" name="agg_checkbox_3_2">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="container_1">
+            <h3>Toxicity of content</h3>
+            <label class="container">Toxic
+                <input type="checkbox" name="toxic_checkbox_1_2" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Severe toxic
+              <input type="checkbox" name="toxic_checkbox_2_2" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Obscene
+              <input type="checkbox" name="toxic_checkbox_3_2">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Threat
+              <input type="checkbox" name="toxic_checkbox_4_2">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Insult
+              <input type="checkbox" name="toxic_checkbox_5_2">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Identity hate
+              <input type="checkbox" name="toxic_checkbox_6_2">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Harmless
+              <input type="checkbox" name="toxic_checkbox_7_2">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+    
+        <div>
+        <h2>Are there any additional comments regarding the comment? Please describe them below. </h2>
+        <crowd-text-area name="essay-2" rows="1"  style="background-color: #FFFFFF"></crowd-text-area>
+    </div>
+    
+    </div>
+
+<div id="3" style="display:none">
+ <h1><strong>Label the comment</strong></h1>
+
+    <h2> Read the content guidelines. Indicate the appropriate label for the comment </h2>
+    <div class="card">
+        <classification-target>
+            <div class="container_1">
+                <div>
+                    <h3>Text</h3>
+    	      	    <p>${comment_3}</p>
+    	        </div>
+    	    <hr/>
+              
+    	    </div>
+    	 </classification-target>
+    </div>
+
+    <h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
+
+    <label><input type="radio" name="label_3" value="Appropriate"required>The comment is <b>Appropriate</b></label>
+            <label><input type="radio" name="label_3" value="Inappropriate">The comment is <b>Inappropriate</b></label>
+
+    <h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
+    
+    <div class="card">
+        <div class="container_1">
+            <h3>Offense</h3>
+            <label class="container">Offensive (targeting an indiviual)
+                <input type="checkbox" name="off_checkbox_1_3">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Offensive (targeting a group or groups)
+                <input type="checkbox" name="off_checkbox_2_3" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Offensive (targeting others)
+                <input type="checkbox" name="off_checkbox_3_3">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Non-offensive
+                <input type="checkbox" name="off_checkbox_4_3">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="container_1">
+            <h3>Aggression</h3>
+            <label class="container">Overtly aggressive
+              <input type="checkbox" name="agg_checkbox_1_3" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Covertly aggressive
+              <input type="checkbox" name="agg_checkbox_2_3" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Non-aggressive
+              <input type="checkbox" name="agg_checkbox_3_3">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="container_1">
+            <h3>Toxicity of content</h3>
+            <label class="container">Toxic
+                <input type="checkbox" name="toxic_checkbox_1_3" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Severe toxic
+              <input type="checkbox" name="toxic_checkbox_2_3" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Obscene
+              <input type="checkbox" name="toxic_checkbox_3_3">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Threat
+              <input type="checkbox" name="toxic_checkbox_4_3">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Insult
+              <input type="checkbox" name="toxic_checkbox_5_3">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Identity hate
+              <input type="checkbox" name="toxic_checkbox_6_3">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Harmless
+              <input type="checkbox" name="toxic_checkbox_7_3">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+    
+        <div>
+        <h2>Are there any additional comments regarding the comment? Please describe them below. </h2>
+        <crowd-text-area name="essay-3" rows="1"  style="background-color: #FFFFFF"></crowd-text-area>
+    </div>
+    
+    </div>
+
+<div id="4" style="display:none">
+ <h1><strong>Label the comment</strong></h1>
+
+    <h2> Read the content guidelines. Indicate the appropriate label for the comment </h2>
+    <div class="card">
+        <classification-target>
+            <div class="container_1">
+                <div>
+                    <h3>Text</h3>
+    	      	    <p>${comment_4}</p>
+    	        </div>
+    	    <hr/>
+              
+    	    </div>
+    	 </classification-target>
+    </div>
+
+    <h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
+
+    <label><input type="radio" name="label_4" value="Appropriate"required>The comment is <b>Appropriate</b></label>
+            <label><input type="radio" name="label_4" value="Inappropriate">The comment is <b>Inappropriate</b></label>
+
+    <h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
+    
+    <div class="card">
+        <div class="container_1">
+            <h3>Offense</h3>
+            <label class="container">Offensive (targeting an indiviual)
+                <input type="checkbox" name="off_checkbox_1_4">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Offensive (targeting a group or groups)
+                <input type="checkbox" name="off_checkbox_2_4" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Offensive (targeting others)
+                <input type="checkbox" name="off_checkbox_3_4">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Non-offensive
+                <input type="checkbox" name="off_checkbox_4_4">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="container_1">
+            <h3>Aggression</h3>
+            <label class="container">Overtly aggressive
+              <input type="checkbox" name="agg_checkbox_1_4" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Covertly aggressive
+              <input type="checkbox" name="agg_checkbox_2_4" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Non-aggressive
+              <input type="checkbox" name="agg_checkbox_3_4">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="container_1">
+            <h3>Toxicity of content</h3>
+            <label class="container">Toxic
+                <input type="checkbox" name="toxic_checkbox_1_4" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Severe toxic
+              <input type="checkbox" name="toxic_checkbox_2_4" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Obscene
+              <input type="checkbox" name="toxic_checkbox_3_4">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Threat
+              <input type="checkbox" name="toxic_checkbox_4_4">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Insult
+              <input type="checkbox" name="toxic_checkbox_5_4">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Identity hate
+              <input type="checkbox" name="toxic_checkbox_6_4">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Harmless
+              <input type="checkbox" name="toxic_checkbox_7_4">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+    
+        <div>
+        <h2>Are there any additional comments regarding the comment? Please describe them below. </h2>
+        <crowd-text-area name="essay-4" rows="1"  style="background-color: #FFFFFF"></crowd-text-area>
+    </div>
+    
+    </div>
+
+<div id="5" style="display:none">
+ <h1><strong>Label the comment</strong></h1>
+
+    <h2> Read the content guidelines. Indicate the appropriate label for the comment </h2>
+    <div class="card">
+        <classification-target>
+            <div class="container_1">
+                <div>
+                    <h3>Text</h3>
+    	      	    <p>${comment_5}</p>
+    	        </div>
+    	    <hr/>
+              
+    	    </div>
+    	 </classification-target>
+    </div>
+
+    <h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
+
+    <label><input type="radio" name="label_5" value="Appropriate"required>The comment is <b>Appropriate</b></label>
+            <label><input type="radio" name="label_5" value="Inappropriate">The comment is <b>Inappropriate</b></label>
+
+    <h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
+    
+    <div class="card">
+        <div class="container_1">
+            <h3>Offense</h3>
+            <label class="container">Offensive (targeting an indiviual)
+                <input type="checkbox" name="off_checkbox_1_5">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Offensive (targeting a group or groups)
+                <input type="checkbox" name="off_checkbox_2_5" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Offensive (targeting others)
+                <input type="checkbox" name="off_checkbox_3_5">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Non-offensive
+                <input type="checkbox" name="off_checkbox_4_5">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="container_1">
+            <h3>Aggression</h3>
+            <label class="container">Overtly aggressive
+              <input type="checkbox" name="agg_checkbox_1_5" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Covertly aggressive
+              <input type="checkbox" name="agg_checkbox_2_5" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Non-aggressive
+              <input type="checkbox" name="agg_checkbox_3_5">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="container_1">
+            <h3>Toxicity of content</h3>
+            <label class="container">Toxic
+                <input type="checkbox" name="toxic_checkbox_1_5" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Severe toxic
+              <input type="checkbox" name="toxic_checkbox_2_5" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Obscene
+              <input type="checkbox" name="toxic_checkbox_3_5">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Threat
+              <input type="checkbox" name="toxic_checkbox_4_5">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Insult
+              <input type="checkbox" name="toxic_checkbox_5_5">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Identity hate
+              <input type="checkbox" name="toxic_checkbox_6_5">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Harmless
+              <input type="checkbox" name="toxic_checkbox_7_5">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+    
+        <div>
+        <h2>Are there any additional comments regarding the comment? Please describe them below. </h2>
+        <crowd-text-area name="essay-5" rows="1"  style="background-color: #FFFFFF"></crowd-text-area>
+    </div>
+    
+    </div>
+
+    
+    
+
+    
+    
+     
+    <hr / >
+   	
+		<div  style="display: flex;">
+		 <button style="display:none" class="back" id="prev" onclick="previous()" type="button">Previous</button>
+		<button class="button" id="nex" onclick="next()" type="button" >Next</button>
+		<button class="button" id="submit" type="button" onclick="submitForm()" style="display:none">Submit</button>
+		<button style="display:none !important;"></button>
+
+		</div>
+    </crowd-form>
+
+    
+
+<script>
+   i = -1
+		
+		function next(){
+			if(i == 5){
+				
+				return;
+			}
+			if(i == 0 && (new Set(checked)).size < 3){
+			alert("You havent finished training!")
+			return;
+			}
+			show(i);
+			console.log(i);
+			i = (i + 1);
+			show(i);
+			
+			document.getElementById("prev").style.display ="block";
+			window.location.href = "#"+i;
+			document.getElementById("nex").style.display ="none";
+			if(i ==5){
+				
+				document.getElementById("submit").style.display ="block";
+			}
+		}
+		
+		function init(){
+		start = 1;
+		end = 5;
+		
+		for(;start<=end;start++){
+			rad = document.getElementsByName("label_"+start.toString());
+			
+			for(var i = 0; i < rad.length;i++){
+			
+			rad[i].addEventListener("change",showNext);
+			}
+		}
+		}
+		
+		init();
+		function showNext(){
+		if(i != 5){
+			document.getElementById("nex").style.display ="block";
+		}
+		}
+		
+		function previous(){
+			if(i == -1){
+				return;
+			}
+			show(i);
+			i = (i-1);
+			if(i == 0){
+				  document.getElementById("prev").style.display ="none";
+			}
+			show(i);
+			document.getElementById("nex").style.display ="block";
+			document.getElementById("submit").style.display ="none";
+		}
+		function show(i) {
+		  var x = document.getElementById(i.toString());
+		  if (x.style.display === "none") {
+			x.style.display = "block";
+		  } else {
+			x.style.display = "none";
+		  }
+		}
+
+		checked = []
+		selected =""
+		
+		
+		
+		function displayAnswer(truth,id){
+			selection = document.getElementsByName("option_"+id.toString())
+		
+			for(x = 0; x < 2; x++){
+			if(selection[x].checked){
+				selected = selection[x]
+				
+			}
+			if(!selected){
+			alert("You havent selected an answer!")
+			return;
+			}
+			}
+			if(selected != ""){
+				value = selected.value;
+				checked.push(id)
+				selected_id = selected.id;
+				
+				selected_id = selected_id[selected_id.length-1];
+				result = document.getElementById("result-"+id.toString()+selected_id)
+				if(truth == value)
+				{
+					selected.parentElement.style.border = "1px solid green";
+					result.innerHTML="<b style='padding:10px'>(Correct)</b>"
+
+				}else
+				{
+					selected.parentElement.style.border = "1px solid red";	
+					result.innerHTML="<b style='padding:10px'>(Incorrect)</b>"
+
+
+				}
+				if((new Set(checked)).size >= 3){
+				showNext();
+				}
+			}
+		}
+
+		
+		
+		function submitForm(){
+		
+		var form = document.getElementById('form');//retrieve the form as a DOM element
+
+		var input = document.createElement('input');//prepare a new input DOM element
+		input.setAttribute('name', "TimeElapsed");//set the param name
+		input.setAttribute('value', timeElapsed(startTime));//set the value
+		input.setAttribute('type', "hidden")//set the type, like "hidden" or other
+
+		form.appendChild(input);//append the input to the form
+        var submitFormFunction = Object.getPrototypeOf(form).submit;
+        submitFormFunction.call(form);
+		
+		}
+		startTime = new Date()
+		function timeElapsed(startTime) {
+		  endTime = new Date();
+		  var timeDiff = endTime - startTime; //in ms
+		  // strip the ms
+		  timeDiff /= 1000;
+
+		  // get seconds 
+		  var seconds = Math.round(timeDiff);
+		  return seconds;
+		}
+		answers =[] //Annotation + 3 justifications minimum (?)
+</script>
