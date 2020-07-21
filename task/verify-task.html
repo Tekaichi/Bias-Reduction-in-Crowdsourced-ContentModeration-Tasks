@@ -980,11 +980,35 @@
 			
 			document.getElementById("prev").style.display ="block";
 			window.location.href = "#"+i;
+			document.getElementById("nex").style.display ="none";
 			if(i == 5){
-				document.getElementById("nex").style.display ="none";
+				
 				document.getElementById("submit").style.display ="block";
 			}
 		}
+		
+		function init(){
+		start = 1;
+		end = 5;
+		
+		for(;start<=end;start++){
+			rad = document.getElementsByName("label_"+start.toString());
+			
+			for(var i = 0; i < rad.length;i++){
+			
+			rad[i].addEventListener("change",showNext);
+			}
+		}
+		}
+		
+		init();
+		function showNext(){
+		if(i != 5){
+			document.getElementById("nex").style.display ="block";
+			console.log("surreal");
+		}
+		}
+		
 		function previous(){
 			if(i == -1){
 				return;
@@ -1043,6 +1067,9 @@
 					result.innerHTML="<b style='padding:10px'>(Incorrect)</b>"
 
 
+				}
+				if((new Set(checked)).size >= 3){
+				showNext();
 				}
 			}
 		}
