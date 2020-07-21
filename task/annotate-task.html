@@ -228,7 +228,7 @@ button.site:after{
 
 </style>
 
-<crowd-form  answer-format="flatten-objects">
+<crowd-form  answer-format="flatten-objects" id="form">
 
 
 
@@ -316,12 +316,12 @@ By clicking <b>“Next”</b> below you are indicating that you are at least 18 
 
     <div id='block-11' style='padding: 10px;'>
         
-    <input type="radio" name="option_1" value="Appropriate" required id="option-11">The comment is <b>Appropriate</b></input>
+    <label><input type="radio" name="option_1" value="Appropriate" required id="option-11">The comment is <b>Appropriate</b></label>
     <span id='result-11'></span>
   </div>
 
   <div id='block-12' style='padding: 10px;'>
-    <input type="radio" name="option_1" value="Inappropriate" id="option-12">The comment is <b>Inappropriate</b></input>
+    <label><input type="radio" name="option_1" value="Inappropriate" id="option-12">The comment is <b>Inappropriate</b></label>
    
     <span id='result-12'></span>
   </div>
@@ -343,13 +343,13 @@ By clicking <b>“Next”</b> below you are indicating that you are at least 18 
     </div>
 
  <div id='block-21' style='padding: 10px;'>
-    <input type="radio" name="option_2" value="Appropriate" required id='option-21'> The comment is <b>Appropriate</b>  </input>
+    <label><input type="radio" name="option_2" value="Appropriate" required id='option-21'> The comment is <b>Appropriate</b>  </label>
     <span id='result-21'></span>
   </div>
 
   <div id='block-22' style='padding: 10px;'>
-    <input type="radio" name="option_2" value="Inappropriate" id='option-22'> The comment is <b>Inappropriate</b>      
-    </input>
+    <label><input type="radio" name="option_2" value="Inappropriate" id='option-22'> The comment is <b>Inappropriate</b>      
+    </label>
     <span id='result-22'></span>
   </div>
   
@@ -372,13 +372,13 @@ By clicking <b>“Next”</b> below you are indicating that you are at least 18 
     </div>
 
  <div id='block-31' style='padding: 10px;'>
-    <input type="radio" name="option_3" value="Appropriate" required id='option-31'> The comment is <b>Appropriate</b>  </input>
+    <label><input type="radio" name="option_3" value="Appropriate" required id='option-31'> The comment is <b>Appropriate</b>  </label>
     <span id='result-31'></span>
   </div>
 
   <div id='block-32' style='padding: 10px;'>
-    <input type="radio" name="option_3" value="Inappropriate" id='option-32'> The comment is <b>Inappropriate</b>   
-    </input>
+    <label><input type="radio" name="option_3" value="Inappropriate" id='option-32'> The comment is <b>Inappropriate</b>   
+    </label>
     <span id='result-32'></span>
   </div>
    <button class="site" type='button' value=${truth_t_3} onclick='displayAnswer(this.value,3)' style='width: 100px; height: 40px; border-radius: 3px; background-color: #FFFFFF; font-weight: 500;'>Check Answer</button>
@@ -409,8 +409,8 @@ By clicking <b>“Next”</b> below you are indicating that you are at least 18 
 
     <h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
 
-    <input type="radio" name="label_1" value="Appropriate"required>The comment is <b>Appropriate</b></input>
-            <input type="radio" name="label_1" value="Inappropriate">The comment is <b>Inappropriate</b></input>
+    <label><input type="radio" name="label_1" value="Appropriate"required>The comment is <b>Appropriate</b></label>
+            <label><input type="radio" name="label_1" value="Inappropriate">The comment is <b>Inappropriate</b></label>
 
     <h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
     
@@ -519,8 +519,8 @@ By clicking <b>“Next”</b> below you are indicating that you are at least 18 
           
     <h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
 
-    <input type="radio" name="label_2" value="Appropriate"required>The comment is <b>Appropriate</b></input>
-            <input type="radio" name="label_2" value="Inappropriate"required>The comment is <b>Inappropriate</b></input>
+    <label><input type="radio" name="label_2" value="Appropriate"required>The comment is <b>Appropriate</b></label>
+           <label> <input type="radio" name="label_2" value="Inappropriate"required>The comment is <b>Inappropriate</b></label>
 
     <h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
     
@@ -627,8 +627,8 @@ By clicking <b>“Next”</b> below you are indicating that you are at least 18 
           
     <h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
 
-    <input type="radio" name="label_3" value="Appropriate" required>The comment is <b>Appropriate</b></input>
-            <input type="radio" name="label_3" value="Inappropriate" required>The comment is <b>Inappropriate</b></input>
+    <label><input type="radio" name="label_3" value="Appropriate" required>The comment is <b>Appropriate</b></label>
+    <label> <input type="radio" name="label_3" value="Inappropriate" required>The comment is <b>Inappropriate</b></label>
 
     <h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
     
@@ -732,8 +732,8 @@ By clicking <b>“Next”</b> below you are indicating that you are at least 18 
           
     <h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
 
-    <input type="radio" name="label_4"  value="Appropriate" required>The comment is <b>Appropriate</b></input>
-            <input type="radio" name="label_4"  value="Inappropriate" required>The comment is <b>Inappropriate</b></input>
+    <label><input type="radio" name="label_4"  value="Appropriate" required>The comment is <b>Appropriate</b></label>
+           <label> <input type="radio" name="label_4"  value="Inappropriate" required>The comment is <b>Inappropriate</b></label>
 
     <h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
     
@@ -837,8 +837,8 @@ By clicking <b>“Next”</b> below you are indicating that you are at least 18 
           
     <h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
 
-    <input type="radio" name="label_5"  value="Appropriate" required>The comment is <b>Appropriate</b></input>
-            <input type="radio" name="label_5" v value="Inappropriate" required>The comment is <b>Inappropriate</b></input>
+    <label><input type="radio" name="label_5"  value="Appropriate" required>The comment is <b>Appropriate</b></label>
+           <label> <input type="radio" name="label_5" v value="Inappropriate" required>The comment is <b>Inappropriate</b></label>
 
     <h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
     
@@ -923,90 +923,156 @@ By clicking <b>“Next”</b> below you are indicating that you are at least 18 
     
     </div>
     <hr / >
-    <div  style="display: flex;">
-     <button style="display:none" class="back" id="prev" onclick="previous()" type="button">Previous</button>
-    <button class="button" id="nex" onclick="next()" type="button" >Next</button>
-	<button class="button" id="submit" type="submit" style="display:none">Submit</button>
-    </div>
+   	
+		<div  style="display: flex;">
+		 <button style="display:none" class="back" id="prev" onclick="previous()" type="button">Previous</button>
+		<button class="button" id="nex" onclick="next()" type="button" >Next</button>
+		<button class="button" id="submit" type="button" onclick="submitForm()" style="display:none">Submit</button>
+		<button style="display:none !important;"></button>
+
+		</div>
     </crowd-form>
 
     
 
 <script>
-    i = -1
-    
-    function next(){
-        if(i == 5){
-		    
-            return;
-        }
-        show(i);
-        console.log(i);
-        i = (i + 1);
-        show(i);
-        
-        document.getElementById("prev").style.display ="block";
-		window.location.href = "#"+i;
-		if(i == 5){
+   i = -1
+		
+		function next(){
+			if(i == 5){
+				
+				return;
+			}
+			if(i == 0 && (new Set(checked)).size < 3){
+			alert("You havent finished training!")
+			return;
+			}
+			show(i);
+			console.log(i);
+			i = (i + 1);
+			show(i);
+			
+			document.getElementById("prev").style.display ="block";
+			window.location.href = "#"+i;
 			document.getElementById("nex").style.display ="none";
-			document.getElementById("submit").style.display ="block";
-		}
-    }
-    function previous(){
-        if(i == -1){
-            return;
-        }
-        show(i);
-        i = (i-1);
-        if(i == 0){
-              document.getElementById("prev").style.display ="none";
-        }
-        show(i);
-		document.getElementById("nex").style.display ="block";
-		document.getElementById("submit").style.display ="none";
-    }
-    function show(i) {
-      var x = document.getElementById(i.toString());
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-	}
-
-	checked = 0
-	selected =""
-	function displayAnswer(truth,id){
-		console.log(truth,id);
-		selection = document.getElementsByName("option_"+id.toString())
-	
-		for(x = 0; x < 2; x++){
-		if(selection[x].checked){
-			selected = selection[x]
-			
-		}
-		}
-		if(selected != ""){
-			value = selected.value;
-			checked = checked + 1;
-			selected_id = selected.id;
-			
-			selected_id = selected_id[selected_id.length-1];
-			result = document.getElementById("result-"+id.toString()+selected_id)
-			if(truth == value)
-			{
-				selected.parentElement.style.border = "1px solid green";
-				result.innerHTML="<b style='padding:10px'>(Correct)</b>"
-
-			}else
-			{
-			    selected.parentElement.style.border = "1px solid red";	
-				result.innerHTML="<b style='padding:10px'>(Incorrect)</b>"
-
-
+			if(i == 5){
+				
+				document.getElementById("submit").style.display ="block";
 			}
 		}
-	}
+		
+		function init(){
+		start = 1;
+		end = 5;
+		
+		for(;start<=end;start++){
+			rad = document.getElementsByName("label_"+start.toString());
+			
+			for(var i = 0; i < rad.length;i++){
+			
+			rad[i].addEventListener("change",showNext);
+			}
+		}
+		}
+		
+		init();
+		function showNext(){
+		if(i != 5){
+			document.getElementById("nex").style.display ="block";
+		}
+		}
+		
+		function previous(){
+			if(i == -1){
+				return;
+			}
+			show(i);
+			i = (i-1);
+			if(i == 0){
+				  document.getElementById("prev").style.display ="none";
+			}
+			show(i);
+			document.getElementById("nex").style.display ="block";
+			document.getElementById("submit").style.display ="none";
+		}
+		function show(i) {
+		  var x = document.getElementById(i.toString());
+		  if (x.style.display === "none") {
+			x.style.display = "block";
+		  } else {
+			x.style.display = "none";
+		  }
+		}
+
+		checked = []
+		selected =""
+		
+		
+		
+		function displayAnswer(truth,id){
+			selection = document.getElementsByName("option_"+id.toString())
+		
+			for(x = 0; x < 2; x++){
+			if(selection[x].checked){
+				selected = selection[x]
+				
+			}
+			if(!selected){
+			alert("You havent selected an answer!")
+			return;
+			}
+			}
+			if(selected != ""){
+				value = selected.value;
+				checked.push(id)
+				selected_id = selected.id;
+				
+				selected_id = selected_id[selected_id.length-1];
+				result = document.getElementById("result-"+id.toString()+selected_id)
+				if(truth == value)
+				{
+					selected.parentElement.style.border = "1px solid green";
+					result.innerHTML="<b style='padding:10px'>(Correct)</b>"
+
+				}else
+				{
+					selected.parentElement.style.border = "1px solid red";	
+					result.innerHTML="<b style='padding:10px'>(Incorrect)</b>"
 
 
+				}
+				if((new Set(checked)).size >= 3){
+				showNext();
+				}
+			}
+		}
+
+		
+		
+		function submitForm(){
+		
+		var form = document.getElementById('form');//retrieve the form as a DOM element
+
+		var input = document.createElement('input');//prepare a new input DOM element
+		input.setAttribute('name', "TimeElapsed");//set the param name
+		input.setAttribute('value', timeElapsed(startTime));//set the value
+		input.setAttribute('type', "hidden")//set the type, like "hidden" or other
+
+		form.appendChild(input);//append the input to the form
+        var submitFormFunction = Object.getPrototypeOf(form).submit;
+        submitFormFunction.call(form);
+		
+		}
+		startTime = new Date()
+		function timeElapsed(startTime) {
+		  endTime = new Date();
+		  var timeDiff = endTime - startTime; //in ms
+		  // strip the ms
+		  timeDiff /= 1000;
+
+		  // get seconds 
+		  var seconds = Math.round(timeDiff);
+		  return seconds;
+		}
+		answers =[] //Annotation + 3 justifications minimum (?)
 </script>
