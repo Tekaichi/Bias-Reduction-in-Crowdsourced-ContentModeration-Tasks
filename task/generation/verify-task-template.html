@@ -1,0 +1,107 @@
+	<div id="{n}" style="display:none">
+	 <h1><strong>Verify the label</strong></h1>
+
+		<h2> Read the content guidelines. Indicate whether you agree/disagree with the label assigned to the comment. </h2>
+		<div class="card">
+			<classification-target>
+				<div class="container_1">
+					<div>
+						<h3>Text</h3>
+						<p>${comment_{ln}}</p>
+					</div>
+				<hr/>
+					<div>
+						<h3>Label</h3>
+						<p>${label_{ln}}</p>
+					</div>
+				</div>
+			 </classification-target>
+		</div>
+
+		<h2>Do you agree with the assigned label? Please check the moderation guidlines.</h2>
+
+		<label><input type="radio" name="label_{ln}" value=${label_{ln}} required>I agree, the comment is <b>${label_{ln}}</b></label>
+				<label><input type="radio" name="label_{ln}" value=${label_not_{ln}}>Disagree, the comment is <b>${label_not_{ln}}</b></label>
+
+		<h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
+		
+		<div class="card">
+			<div class="container_1">
+				<h3>Offense</h3>
+				<label class="container">Offensive (targeting an indiviual)
+					<input type="checkbox" name="off_checkbox_1_{ln}">
+					<span class="checkmark"></span>
+				</label>
+				<label class="container">Offensive (targeting a group or groups)
+					<input type="checkbox" name="off_checkbox_2_{ln}" >
+					<span class="checkmark"></span>
+				</label>
+				<label class="container">Offensive (targeting others)
+					<input type="checkbox" name="off_checkbox_3_{ln}">
+					<span class="checkmark"></span>
+				</label>
+				<label class="container">Non-offensive
+					<input type="checkbox" name="off_checkbox_4_{ln}">
+					<span class="checkmark"></span>
+				</label>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="container_1">
+				<h3>Aggression</h3>
+				<label class="container">Overtly aggressive
+				  <input type="checkbox" name="agg_checkbox_1_{ln}" >
+				  <span class="checkmark"></span>
+				</label>
+				<label class="container">Covertly aggressive
+				  <input type="checkbox" name="agg_checkbox_2_{ln}" >
+				  <span class="checkmark"></span>
+				</label>
+				<label class="container">Non-aggressive
+				  <input type="checkbox" name="agg_checkbox_3_{ln}">
+				  <span class="checkmark"></span>
+				</label>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="container_1">
+				<h3>Toxicity of content</h3>
+				<label class="container">Toxic
+					<input type="checkbox" name="toxic_checkbox_1_{ln}" >
+					<span class="checkmark"></span>
+				</label>
+				<label class="container">Severe toxic
+				  <input type="checkbox" name="toxic_checkbox_2_{ln}" >
+				  <span class="checkmark"></span>
+				</label>
+				<label class="container">Obscene
+				  <input type="checkbox" name="toxic_checkbox_3_{ln}">
+				  <span class="checkmark"></span>
+				</label>
+				<label class="container">Threat
+				  <input type="checkbox" name="toxic_checkbox_4_{ln}">
+				  <span class="checkmark"></span>
+				</label>
+				<label class="container">Insult
+				  <input type="checkbox" name="toxic_checkbox_5_{ln}">
+				  <span class="checkmark"></span>
+				</label>
+				<label class="container">Identity hate
+				  <input type="checkbox" name="toxic_checkbox_6_{ln}">
+				  <span class="checkmark"></span>
+				</label>
+				<label class="container">Harmless
+				  <input type="checkbox" name="toxic_checkbox_7_{ln}">
+				  <span class="checkmark"></span>
+				</label>
+			</div>
+		</div>
+		
+			<div>
+			<h2>Are there any additional comments regarding the comment? Please describe them below. </h2>
+			<crowd-text-area name="essay-{ln}" rows="1"  style="background-color: #FFFFFF"></crowd-text-area>
+		</div>
+		
+		</div>
