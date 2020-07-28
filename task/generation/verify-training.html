@@ -1,0 +1,101 @@
+<div id="0" style="display:none">
+		<h1><strong>Verify the label: Training Program</strong></h1>
+
+		<h2> Read the content guidelines. Indicate whether you agree/disagree with the label assigned to the comment. </h2>
+		<h3>You can check your answer by clicking on the "Check Answer" button. </h3>
+
+	<div class="card">
+			<classification-target>
+				<div class="container_1">
+					<div>
+						<h3>Text</h3>
+						<p>${comment_t_1}</p>
+					</div>
+				<hr/>
+					<div>
+						<h3>Label</h3>
+						<p>${label_t_1}</p>
+					</div>
+				</div>
+			 </classification-target>
+		</div>
+		  
+
+		<div id='block-11' style='padding: 10px;'>
+			
+		<label><input type="radio" name="option_1" value=${label_t_1} required id="option-11">I agree, the comment is <b>${label_t_1}</b></label>
+		<span id='result-11'></span>
+	  </div>
+
+	  <div id='block-12' style='padding: 10px;'>
+		<label><input type="radio" name="option_1" value=${label_not_t_1} id="option-12">I disagree, the comment is <b>${label_not_t_1}</b></label>
+	   
+		<span id='result-12'></span>
+	  </div>
+
+	   <button class="site" type='button' value=${truth_t_1} onclick='displayAnswer(this.value,1)' style='width: 100px; height: 40px; border-radius: 3px; background-color: #FFFFFF; font-weight: 500;'>Check Answer</button>
+	<a id='showanswer_1'></a>
+
+
+	<div class="card">
+			<classification-target>
+				<div class="container_1">
+					<div>
+						<h3>Text</h3>
+						<p>${comment_t_2}</p>
+					</div>
+				<hr/>
+					<div>
+						<h3>Label</h3>
+						<p>${label_t_2}</p>
+					</div>
+				</div>
+			 </classification-target>
+		</div>
+
+	 <div id='block-21' style='padding: 10px;'>
+		<label><input type="radio" name="option_2" value=${label_t_2} required id='option-21'> I agree, the comment is ${label_t_2}  </label>
+		<span id='result-21'></span>
+	  </div>
+
+	  <div id='block-22' style='padding: 10px;'>
+		<label><input type="radio" name="option_2" value=${label_not_t_2} id='option-22'> I disagree, the comment is ${label_not_t_2}      
+		</label>
+		<span id='result-22'></span>
+	  </div>
+	  
+	   <button class="site" type='button' value=${truth_t_2} onclick='displayAnswer(this.value,2)' style='width: 100px; height: 40px; border-radius: 3px; background-color: #FFFFFF; font-weight: 500;'>Check Answer</button>
+
+	<a id='showanswer_2'></a>
+
+
+	<div class="card">
+			<classification-target>
+				<div class="container_1">
+					<div>
+						<h3>Text</h3>
+						<p>${comment_t_3}</p>
+					</div>
+				<hr/>
+					<div>
+						<h3>Label</h3>
+						<p>${label_t_3}</p>
+					</div>
+				</div>
+			 </classification-target>
+		</div>
+
+	 <div id='block-31' style='padding: 10px;'>
+		<label><input type="radio" name="option_3" value=${label_t_3} required id='option-31'> I agree, the comment is ${label_t_3}  </label>
+		<span id='result-31'></span>
+	  </div>
+
+	  <div id='block-32' style='padding: 10px;'>
+		<label><input type="radio" name="option_3" value=${label_not_t_3} id='option-32'> I disagree, the comment is ${label_not_t_3}      
+		</label>
+		<span id='result-32'></span>
+	  </div>
+	   <button class="site" type='button' value=${truth_t_3} onclick='displayAnswer(this.value,3)' style='width: 100px; height: 40px; border-radius: 3px; background-color: #FFFFFF; font-weight: 500;'>Check Answer</button>
+	<a id='showanswer_3'></a>
+		  
+	</div>

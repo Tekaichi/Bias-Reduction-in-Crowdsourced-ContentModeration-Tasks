@@ -151,7 +151,7 @@ for i in range(output_size):
         output_i[i].append(row[index+2])
         output_i[i].append(row[index+1])
         output_i[i].append(row[index+3])
-        row = output_a[i][index]
+        row = output_a[i]
         output_a[i].append(row[index])
         output_a[i].append(row[index+2])
         output_a[i].append(row[index+1])
@@ -189,22 +189,37 @@ header = ",".join(header)
 annotate.write(header)
 annotate.write("\n")
 
-output_annotate = []
-for row in american_:
-    row_annotate =[]
-    for i in range(0,len(row)-13,3):
-        
-        row_annotate.append(row[i])
-     
-       
-    for i in range(len(row)-12,len(row),4):
-       
-        row_annotate.append(row[i])
-
-        row_annotate.append(row[i+3])
-    output_annotate.append(row_annotate)
+output_annotate = [[] for i in range(output_size)]
+for i in range(output_size):
+    for j in range(redundancy):
+      
+        index = (i+j)%len(indian_values)
+        value= american_values[index]
+        output_annotate[i].append(value[0])
   
+        
+    #Add training samples
 
+    for j in range(training_size-attention_check):
+        
+        
+        index = rand.randrange(output_size)
+        
+        value= american_values[index]
+        while(value[0] in output_annotate[i]):
+            index = rand.randrange(output_size)
+            value= american_values[index]
+        
+        output_annotate[i].append(value[0])
+        output_annotate[i].append(value[3])
+
+    for j in range(attention_check):
+        index = rand.randrange(redundancy)
+        row = output_annotate[i]
+        output_annotate[i].append(row[index])
+        output_annotate[i].append(row[index+3])
+
+        
 output_annotate = [",".join(i) for i in output_annotate]
 for i in output_annotate:
     annotate.write(i)

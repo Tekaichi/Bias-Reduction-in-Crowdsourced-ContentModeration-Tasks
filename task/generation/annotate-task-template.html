@@ -8,7 +8,7 @@
             <div class="container_1">
                 <div>
                     <h3>Text</h3>
-    	      	    <p>${comment_{n}}</p>
+    	      	    <p>${comment_{ln}}</p>
     	        </div>
     	    <hr/>
               
@@ -18,8 +18,8 @@
 
     <h2>Label the comment. Please check the moderation guidlines.</h2>
 
-    <label><input type="radio" name="label_{n}" value="Appropriate"required>The comment is <b>Appropriate</b></label>
-            <label><input type="radio" name="label_{n}" value="Inappropriate">The comment is <b>Inappropriate</b></label>
+    <label><input type="radio" name="label_{ln}" value="Appropriate"required>The comment is <b>Appropriate</b></label>
+            <label><input type="radio" name="label_{ln}" value="Inappropriate">The comment is <b>Inappropriate</b></label>
 
     <h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
     
@@ -27,19 +27,19 @@
         <div class="container_1">
             <h3>Offense</h3>
             <label class="container">Offensive (targeting an indiviual)
-                <input type="checkbox" name="off_checkbox_1_{n}">
+                <input type="checkbox" name="off_checkbox_1_{ln}">
                 <span class="checkmark"></span>
             </label>
             <label class="container">Offensive (targeting a group or groups)
-                <input type="checkbox" name="off_checkbox_2_{n}" >
+                <input type="checkbox" name="off_checkbox_2_{ln}" >
                 <span class="checkmark"></span>
             </label>
             <label class="container">Offensive (targeting others)
-                <input type="checkbox" name="off_checkbox_3_{n}">
+                <input type="checkbox" name="off_checkbox_3_{ln}">
                 <span class="checkmark"></span>
             </label>
             <label class="container">Non-offensive
-                <input type="checkbox" name="off_checkbox_4_{n}">
+                <input type="checkbox" name="off_checkbox_4_{ln}">
                 <span class="checkmark"></span>
             </label>
         </div>
@@ -49,15 +49,15 @@
         <div class="container_1">
             <h3>Aggression</h3>
             <label class="container">Overtly aggressive
-              <input type="checkbox" name="agg_checkbox_1_{n}" >
+              <input type="checkbox" name="agg_checkbox_1_{ln}" >
               <span class="checkmark"></span>
             </label>
             <label class="container">Covertly aggressive
-              <input type="checkbox" name="agg_checkbox_2_{n}" >
+              <input type="checkbox" name="agg_checkbox_2_{ln}" >
               <span class="checkmark"></span>
             </label>
             <label class="container">Non-aggressive
-              <input type="checkbox" name="agg_checkbox_3_{n}">
+              <input type="checkbox" name="agg_checkbox_3_{ln}">
               <span class="checkmark"></span>
             </label>
         </div>
@@ -67,31 +67,31 @@
         <div class="container_1">
             <h3>Toxicity of content</h3>
             <label class="container">Toxic
-                <input type="checkbox" name="toxic_checkbox_1_{n}" >
+                <input type="checkbox" name="toxic_checkbox_1_{ln}" >
                 <span class="checkmark"></span>
             </label>
             <label class="container">Severe toxic
-              <input type="checkbox" name="toxic_checkbox_2_{n}" >
+              <input type="checkbox" name="toxic_checkbox_2_{ln}" >
               <span class="checkmark"></span>
             </label>
             <label class="container">Obscene
-              <input type="checkbox" name="toxic_checkbox_3_{n}">
+              <input type="checkbox" name="toxic_checkbox_3_{ln}">
               <span class="checkmark"></span>
             </label>
             <label class="container">Threat
-              <input type="checkbox" name="toxic_checkbox_4_{n}">
+              <input type="checkbox" name="toxic_checkbox_4_{ln}">
               <span class="checkmark"></span>
             </label>
             <label class="container">Insult
-              <input type="checkbox" name="toxic_checkbox_5_{n}">
+              <input type="checkbox" name="toxic_checkbox_5_{ln}">
               <span class="checkmark"></span>
             </label>
             <label class="container">Identity hate
-              <input type="checkbox" name="toxic_checkbox_6_{n}">
+              <input type="checkbox" name="toxic_checkbox_6_{ln}">
               <span class="checkmark"></span>
             </label>
             <label class="container">Harmless
-              <input type="checkbox" name="toxic_checkbox_7_{n}">
+              <input type="checkbox" name="toxic_checkbox_7_{ln}">
               <span class="checkmark"></span>
             </label>
         </div>
@@ -99,7 +99,7 @@
     
         <div>
         <h2>Are there any additional comments regarding the comment? Please describe them below. </h2>
-        <crowd-text-area name="essay-{n}" rows="1"  style="background-color: #FFFFFF"></crowd-text-area>
+        <crowd-text-area name="essay-{ln}" rows="1"  style="background-color: #FFFFFF"></crowd-text-area>
     </div>
     
     </div>

@@ -6,8 +6,8 @@ Generate Annotate and Verify tasks with n comments.
 
 #Parameters
 n = 5 # NUMBER OF COMMENTS IN A TASK
-start_attention_check = 1
-interval_attention_check = 3
+start_attention_check = 2
+interval_attention_check = 5
 
 #--------------------------------
 attention_check = interval_attention_check
@@ -17,8 +17,11 @@ verify = open("verify-task-template.html","r").read()
 attention = open("attention-check.html","r").read()
 task = open("task-template.html", "r").read().replace("{n}",str(n+1))
 
-final_annotate = task
-final_verify = task
+verify_training = open("verify-training.html","r").read()
+annotate_training = open("annotate-training.html","r").read()
+
+final_annotate = task.replace("{TRAINING}",annotate_training)
+final_verify = task.replace("{TRAINING}",verify_training)
 body_annotate = ""
 body_verify = ""
 for i in range(n):
