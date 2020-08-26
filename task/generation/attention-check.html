@@ -1,4 +1,108 @@
 	<div id="{n}" style="display:none">
+	<strong>Label the comment</strong></h1>
+
+    <h2> This is an attention check. Please label the comment. </h2>
+    <div class="card">
+        <classification-target>
+            <div class="container_1">
+                <div>
+                    <h3>Text</h3>
+    	      	    <p>${comment_{ln}}</p>
+    	        </div>
+    	    <hr/>
+              
+    	    </div>
+    	 </classification-target>
+    </div>
+
+    <h2>Label the comment as Appropriate, Offensive, Non-aggressive and Insult.</h2>
+
+    <label><input type="radio" name="label_{ln}" value="Appropriate"required>The comment is <b>Appropriate</b></label>
+            <label><input type="radio" name="label_{ln}" value="Inappropriate">The comment is <b>Inappropriate</b></label>
+
+    <h2> Please motivate your choice. Select the aspects that are relevant to your decision.</h2>
+    
+    <div class="card">
+        <div class="container_1">
+            <h3>Offense</h3>
+            <label class="container">Offensive (targeting an indiviual)
+                <input type="checkbox" name="off_checkbox_1_{ln}">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Offensive (targeting a group or groups)
+                <input type="checkbox" name="off_checkbox_2_{ln}" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Offensive (targeting others)
+                <input type="checkbox" name="off_checkbox_3_{ln}">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Non-offensive
+                <input type="checkbox" name="off_checkbox_4_{ln}">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="container_1">
+            <h3>Aggression</h3>
+            <label class="container">Overtly aggressive
+              <input type="checkbox" name="agg_checkbox_1_{ln}" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Covertly aggressive
+              <input type="checkbox" name="agg_checkbox_2_{ln}" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Non-aggressive
+              <input type="checkbox" name="agg_checkbox_3_{ln}">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="container_1">
+            <h3>Toxicity of content</h3>
+            <label class="container">Toxic
+                <input type="checkbox" name="toxic_checkbox_1_{ln}" >
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Severe toxic
+              <input type="checkbox" name="toxic_checkbox_2_{ln}" >
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Obscene
+              <input type="checkbox" name="toxic_checkbox_3_{ln}">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Threat
+              <input type="checkbox" name="toxic_checkbox_4_{ln}">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Insult
+              <input type="checkbox" name="toxic_checkbox_5_{ln}">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Identity hate
+              <input type="checkbox" name="toxic_checkbox_6_{ln}">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Harmless
+              <input type="checkbox" name="toxic_checkbox_7_{ln}">
+              <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+    
+        <div>
+        <h2>Are there any additional comments regarding the comment? Please describe them below. </h2>
+        <crowd-text-area name="essay-{ln}" rows="1"  style="background-color: #FFFFFF"></crowd-text-area>
+    </div>
+    
+{SPLIT}
+	<div id="{n}" style="display:none">
 	 <h1><strong>Attention Check</strong></h1>
 
 		
@@ -7,19 +111,20 @@
 				<div class="container_1">
 					<div>
 						
-						<h2>This is an attention check question. Please answer b)</h2>
+						<h2>This is an attention check question. Please select banana.</h2>
 					</div>
 				
 				</div>
 			 </classification-target>
 		</div>
 
-		<h2>What is your favorite drink?</h2>
+		<h2>What is your favorite fruit?</h2>
 
-		<label><input type="radio" name="check_{an}" value="a" required onclick="showNext()" >a) Water</b></label>
-				<label><input type="radio" name="check_{an}" value="b" onclick="showNext()">b) Piss</b></label>
-				<label><input type="radio" name="check_{an}" value="c" onclick="showNext()">c) Juice</b></label>
+		<label><input type="radio" name="check_{an}" value="a" required onclick="showNext()" >a) Banana</b></label>
+				<label><input type="radio" name="check_{an}" value="b" onclick="showNext()">b) Apple</b></label>
+				<label><input type="radio" name="check_{an}" value="c" onclick="showNext()">c) Mango</b></label>
 
 	
 		
 		</div>
+
