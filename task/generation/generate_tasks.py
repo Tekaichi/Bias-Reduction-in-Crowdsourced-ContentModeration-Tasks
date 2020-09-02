@@ -11,7 +11,6 @@ n = 20
 
 annotate = open("annotate-task-template.html", "r").read()
 verify = open("verify-task-template.html","r").read()
-attention = open("attention-check.html","r").read().split("{SPLIT}")
 task = open("task-template.html", "r").read().replace("{n}",str(n+1))
 
 verify_training = open("verify-training.html","r").read()
