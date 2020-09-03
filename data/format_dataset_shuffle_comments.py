@@ -64,10 +64,10 @@ to_india_dataset = to_india_dataset.join(df["Majority Voting"])
 
 
 
-redundancy = 3 #n shuffle
+redundancy = 50 #n shuffle
 training_size = 3
 
-header = [ "comment_"+str((i+1))+",label_"+str((i+1))+",label_not_"+str((i+1)) for i in range(len(lines)-training_size)]
+header = [ "comment_"+str((i+1))+",label_"+str((i+1))+",label_not_"+str((i+1)) for i in range(len(lines))]
 header.append("comment_t_1")
 header.append("label_t_1")
 header.append("label_not_t_1")
@@ -113,9 +113,9 @@ constraints = {}
 
 #How to increase output size ? 
 for i in range(redundancy):
-    row_a = to_american_dataset.iloc[:-training_size].sample(frac=1)
-    row_i = to_india_dataset.iloc[:-training_size].sample(frac=1)
-    for j in range(len(lines)-training_size):
+    row_a = to_american_dataset.sample(frac=1)
+    row_i = to_india_dataset.sample(frac=1)
+    for j in range(len(lines)):
       
   
         value_i = row_i.iloc[j]
@@ -163,7 +163,7 @@ to_india.close()
 
 annotate = open("dataset_annotate.csv","w+")
 
-header = [ "comment_"+str((i+1)) for i in range(len(lines)-training_size)]
+header = [ "comment_"+str((i+1)) for i in range(len(lines))]
 header.append("comment_t_1")
 header.append("truth_t_1")
 header.append("comment_t_2")
@@ -176,9 +176,9 @@ annotate.write("\n")
 
 output_annotate = [[] for i in range(redundancy)]
 for i in range(redundancy):
-    row = to_american_dataset.iloc[:-training_size].sample(frac=1)
+    row = to_american_dataset.sample(frac=1)
  
-    for j in range(len(lines)-training_size):
+    for j in range(len(lines)):
       
         value= row.iloc[j]
         output_annotate[i].append(value[0])
@@ -198,8 +198,8 @@ for i in range(redundancy):
  
 
         
-output_annotate = [",".join(i) for i in output_annotate]
-for i in output_annotate:
+output_final = [",".join(i) for i in output_annotate]
+for i in output_final:
     annotate.write(i)
     annotate.write("\n")
     
