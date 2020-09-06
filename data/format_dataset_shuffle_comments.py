@@ -64,7 +64,7 @@ to_india_dataset = to_india_dataset.join(df["Majority Voting"])
 
 
 
-redundancy = 50 #n shuffle
+redundancy = 40 #n shuffle
 training_size = 3
 
 header = [ "comment_"+str((i+1))+",label_"+str((i+1))+",label_not_"+str((i+1)) for i in range(len(lines))]
