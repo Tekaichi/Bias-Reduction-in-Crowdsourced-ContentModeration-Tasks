@@ -400,6 +400,7 @@ Please print a copy of this page for your records.
 		}
 		function next(){
 			answers = []
+			answered = false;
 			if(i == (27+1)){
 				
 				return;
@@ -418,32 +419,36 @@ Please print a copy of this page for your records.
 			
 		}
 		
-		function changedChecked(name,checked){
+		function changedChecked(name,ref){
 			let s = name.split("_");
-			id = s[0]+s[1];
+			let checked = ref.checked;
+			let id = s[0]+s[1];
 			if(checked){
 			answers.push(id);
-			showNext();
+		
 			}else{
-				for(let i = 0;i < answers.size;i++){
+				for(let i = 0;i < answers.length;i++){
 				if(answers[i] === id){
+				
 					answers.splice(i,1);
 					break;
 				}
 				}
 			}
+			showNext();
 			
 		}
+		
 		
 		function init(){
 		start = 1;
 		end = 27;
-		
+		answered = false;
 		let inputs = document.getElementsByTagName("input");
 		for(var i = 0; i < inputs.length; i++) {
 			if(inputs[i].type == "checkbox") {
 				let _this = inputs[i]
-				inputs[i].addEventListener("change",function(){changedChecked(_this.name,_this.checked); });
+				inputs[i].addEventListener("change",function(){changedChecked(_this.name,_this); });
 			
 			}  
 		}
@@ -453,14 +458,14 @@ Please print a copy of this page for your records.
 			
 			for(var i = 0; i < rad.length;i++){
 			
-			rad[i].addEventListener("change",showNext);
+			rad[i].addEventListener("change",function(){answered = true;showNext(); });
 			}
 		}
 		}
 		
 		init();
 		function showNext(){
-		if(i != (27+1) && (new Set(answers).size == 3)  || i<=0){
+		if(i != (27+1) && (((new Set(answers).size == 3)  && answered) ||i<=0)){
 			document.getElementById("nex").style.display ="block";
 		}else if(i == (27+1)){
 		document.getElementById("submit").style.display ="block";
