@@ -3219,6 +3219,7 @@ Please print a copy of this page for your records.
 		}
 		}
 		function next(){
+			answers = []
 			if(i == (27+1)){
 				
 				return;
@@ -3228,7 +3229,6 @@ Please print a copy of this page for your records.
 			return;
 			}
 			show(i);
-			console.log(i);
 			i = (i + 1);
 			show(i);
 			
@@ -3238,9 +3238,35 @@ Please print a copy of this page for your records.
 			
 		}
 		
+		function changedChecked(name,checked){
+			let s = name.split("_");
+			id = s[0]+s[1];
+			if(checked){
+			answers.push(id);
+			showNext();
+			}else{
+				for(let i = 0;i < answers.size;i++){
+				if(answers[i] === id){
+					answers.splice(i,1);
+					break;
+				}
+				}
+			}
+			
+		}
+		
 		function init(){
 		start = 1;
 		end = 27;
+		
+		let inputs = document.getElementsByTagName("input");
+		for(var i = 0; i < inputs.length; i++) {
+			if(inputs[i].type == "checkbox") {
+				let _this = inputs[i]
+				inputs[i].addEventListener("change",function(){changedChecked(_this.name,_this.checked); });
+			
+			}  
+		}
 		
 		for(;start<=end;start++){
 			rad = document.getElementsByName("label_"+start.toString());
@@ -3254,10 +3280,12 @@ Please print a copy of this page for your records.
 		
 		init();
 		function showNext(){
-		if(i != (27+1)){
+		if(i != (27+1) && (new Set(answers).size == 3)  || i<=0){
 			document.getElementById("nex").style.display ="block";
 		}else if(i == (27+1)){
 		document.getElementById("submit").style.display ="block";
+		}else{
+		document.getElementById("nex").style.display ="none";
 		}
 		}
 		
