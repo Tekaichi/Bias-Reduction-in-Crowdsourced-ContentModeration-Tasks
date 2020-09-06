@@ -3285,9 +3285,9 @@ Please print a copy of this page for your records.
 		
 		init();
 		function showNext(){
-		if(i != (27+1) && (((new Set(answers).size == 3)  && answered) ||i<=0)){
+		if(i != 27 && (((new Set(answers).size == 3)  && answered) ||i<=0)){
 			document.getElementById("nex").style.display ="block";
-		}else if(i == (27+1)){
+		}else if(i == 27){
 		document.getElementById("submit").style.display ="block";
 		}else{
 		document.getElementById("nex").style.display ="none";
